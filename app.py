@@ -9,6 +9,8 @@ from flask import abort
 app = Flask(__name__)
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
 
 @app.errorhandler(404)
 def not_found(error):
